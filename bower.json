@@ -1,0 +1,14 @@
+{
+  "name": "aprilFools",
+  "version": "0.0.0",
+  "authors": [
+    "Jordan Checkman <jordan@kargo.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "bourbon": "~4.2.2",
+    "neat": "~1.7.2",
+    "velocity": "~1.2.2"
+  }
+}
