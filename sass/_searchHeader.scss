@@ -1,0 +1,58 @@
+body {
+	background-color: #ccc;
+}
+
+.outerContainer {
+	@include outer-container();
+}
+
+.searchHeader {
+	@include span-columns(12);
+	height: 5em;
+	border: 1px solid #ccc;
+	background-color: #fff;
+}
+
+.searchHeader-inner {
+	height: 100%;
+	width: 100%;
+	display: flex;
+}
+
+.searchHeader-searchArea {
+	display: flex;
+	align-items: center;
+	padding: 0 1em;
+
+}
+
+.searchArea-searchField {
+	width:13em;
+}
+
+.searchHeader-addButton {
+	@include span-columns(2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-left: 1px solid #ccc;
+}
+
+.button {
+	@include appearance(none);
+	outline: 0;
+	border: 0;
+	cursor: pointer;
+}
+
+.button--addAll {
+	background-color: #fff;
+	font-size: 1.5em;
+	color: #000;
+	border: 1px solid #ccc;
+	transition: background-color 0.218s ease;
+
+	&:hover {
+		background-color: #ccc;
+	}
+}

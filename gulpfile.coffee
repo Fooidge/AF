@@ -1,4 +1,5 @@
 gulp = require 'gulp'
+autoprefixer = require 'gulp-autoprefixer'
 coffee = require 'gulp-coffee'
 sass = require 'gulp-sass'
 concat = require 'gulp-concat'
@@ -7,7 +8,10 @@ rename = require 'gulp-rename'
 gulp.task 'sass', ->
 	gulp.src './sass/master.scss'
 	.pipe sass
-		outputStyle: 'compressed'
+		outputStyle: 'expanded'
+	.pipe autoprefixer
+		browsers: ['last 2 versions']
+		cascade: false
 	.pipe gulp.dest './htdocs/css'
 
 gulp.task 'build', ->
@@ -33,5 +37,5 @@ gulp.task 'default', ->
 	gulp.start 'build'
 
 gulp.task 'watch', ->
-	gulp.watch ['./sass/**/*.scss'], 'sass'
-	gulp.watch ['./coffee/**/*.coffee'], 'build'
+	gulp.watch './sass/**/*.scss', ['sass']
+	gulp.watch './coffee/**/*.coffee', ['build']
